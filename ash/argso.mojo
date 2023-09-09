@@ -1,4 +1,4 @@
-'''Arg Stream Helper (ASH)'''
+'''ASH - args operations'''
 
 from sys import argv
 
@@ -17,13 +17,10 @@ struct ArgV:
     fn __len__(self) -> Int:
         return self.size - self.index
 
-    fn __next__(inout self) raises -> StringRef:
-        if self.index < self.size:
-            let result = self.data[self.index]
-            self.index += 1
-            return result
-        else:
-            raise Error("End of iteration")
+    fn __next__(inout self) -> StringRef:
+        let result = self.data[self.index]
+        self.index += 1
+        return result
 
     fn __iter__(inout self) -> ArgV:
         self.index = 0
