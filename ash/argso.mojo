@@ -9,9 +9,9 @@ struct ArgV:
     var size: Int
     var index: Int
 
-    fn __init__(inout self, args: VariadicList[StringRef]):
-        self.data = args
-        self.size = len(args)
+    fn __init__(inout self):
+        self.data = argv()
+        self.size = len(self.data)
         self.index = 0
 
     fn __len__(self) -> Int:
