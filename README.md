@@ -2,7 +2,7 @@
 
 ### Overview
 
-ASH is a utility crafted to process arguments via the standard input stream. It's designed to facilitate interaction of command-line arguments, and piping operations.
+ASH is a utility crafted to help process arguments from standard input stream; designed to facilitate interaction with command-line arguments, and piping operations.
 
 ### Quick Start
 
