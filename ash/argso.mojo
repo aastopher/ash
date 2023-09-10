@@ -25,3 +25,12 @@ struct ArgV:
     fn __iter__(inout self) -> ArgV:
         self.index = 0
         return self
+
+    fn __str__(self) -> String:
+        var result = String('{"') + self.data[0] + String('":')
+        for i in range(self.size - 1):
+            result += String(' "') + self.data[i+1] + String('",')
+        return result[:-1] + String('}')
+
+    fn show(inout self):
+        print(self.__str__())
